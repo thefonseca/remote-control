@@ -2,6 +2,8 @@
 
 This a simple Javascript remote control I implemented to play with home automation.
 
+## Screenshots
+
 <img src="/public/images/screenshot1.jpg?raw=true" width="300">        <img src="/public/images/screenshot2.jpg?raw=true" width="300">
 
 ## Demo: Controlling Home Theater (old version)
