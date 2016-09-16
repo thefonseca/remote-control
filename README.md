@@ -2,7 +2,7 @@
 
 This a simple Javascript remote control I implemented to play with home automation.
 
-![Alt text](/public/images/screenshot1.jpg?raw=true =250x "Device Screen")  ![Alt text](/public/images/screenshot2.jpg?raw=true =250x "Devices")
+<img src="/public/images/screenshot1.jpg?raw=true" width="250">  <img src="/public/images/screenshot2.jpg?raw=true" width="250">
 
 ## Demo: Controlling Home Theater (old version)
 
