@@ -25,7 +25,6 @@ exports.options = function(req, res) {
 };
 
 exports.control = function(req) {
-
   var result = remote.send_command(req.data.dev, req.data.cmd, req.data.repeat);
   req.io.emit('result', { message: result.message });
 }

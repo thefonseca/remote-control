@@ -1,12 +1,7 @@
 var net = require('net');
 var commands = require('./commands');
 var macros = require('./macros');
-
-var HOST = '192.168.0.56';
-var PORT = 4998;
-var DEFAULT_MODULE = 1;
-var DEFAULT_CONNECTOR = 3;
-var DEFAULT_CMD_ID = 1;
+var config = require('../config');
 
 var client = null;
 var command_queue = [];
@@ -16,9 +11,9 @@ var last_repeat_command;
 function connect(callback) {
 
     client = new net.Socket();
-    client.connect(PORT, HOST, function() {
+    client.connect(config.itach.port, config.itach.host, function() {
 
-        console.log('CONNECTED TO: ' + HOST + ':' + PORT);
+        console.log('CONNECTED TO: ' + config.itach.host + ':' + config.itach.port);
         callback();
     });
 
@@ -101,7 +96,7 @@ function process_commands(device, cmd_name, repeat) {
         return;
     }
 
-    if (commands[key] instanceof Array) {
+    if (commands[key] instanceof Array) { // a collection of commands
 
         for (var i = 0; i < commands[key].length; i++) {
 
@@ -140,7 +135,17 @@ function buildCommandStr(cmd, id, repeat) {
         offset = 1;
     }
 
-    var cmd_str = cmd.name + "," + cmd.module + ":" + cmd.connector;
+    var module = cmd.module;
+    if (!module) {
+        module = config.itach.module;
+    }
+
+    var connector = cmd.connector;
+    if (!connector) {
+        connector = config.itach.connector;
+    }
+
+    var cmd_str = cmd.name + "," + module + ":" + connector;
 
     if (cmd.name === "sendir") {
         cmd_str += "," + id + "," + cmd.frequency;
