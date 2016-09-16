@@ -2,7 +2,9 @@
 
 This a simple Javascript remote control I implemented to play with home automation.
 
-## Demo: Controlling Home Theater
+![Alt text](/public/images/screenshot1.jpg?raw=true "Device Screen")  ![Alt text](/public/images/screenshot2.jpg?raw=true "Devices")
+
+## Demo: Controlling Home Theater (old version)
 
 [![Alt text](https://img.youtube.com/vi/wbnYjC6w0bA/0.jpg)](https://www.youtube.com/watch?v=wbnYjC6w0bA)
 
