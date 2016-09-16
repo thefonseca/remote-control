@@ -1,0 +1,10 @@
+{
+  "name": "remote-control",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "^4.14.0",
+    "express.io": "^1.1.13",
+    "pug": "^2.0.0-beta6"
+  }
+}

@@ -1,0 +1,111 @@
+extends layout
+
+block body
+  each macro, key in macros 
+
+    div(id="" + key, data-role="page", data-theme="a", style="min-height: 100%;")
+      //- div(data-role="header")
+      //  h1 Foo
+
+      div(id="" + key + "-content", data-role="content", style="padding: 0; position: absolute; height: 100%; width: 100%;")
+
+        .command-grid.ui-grid-b(data-cmd-swipeleft="" + macro['swipeleft'], data-cmd-swiperight="" + macro['swiperight'], data-cmd-swipeup="" + macro['swipeup'], data-cmd-swipedown="" + macro['swipedown'], data-cmd-stop="" + macro['stop'])
+          .ui-block-a
+            .ui-bar.ui-bar-a(data-cmd-tap="" + macro['area11_tap'], data-cmd-taphold="" + macro['area11_taphold']) 
+              =macro['area11_tap_label']
+              br
+              span #{macro['area11_taphold_label']}
+          .ui-block-b
+            .ui-bar.ui-bar-a(data-cmd-tap="" + macro['area12_tap'], data-cmd-taphold="" + macro['area12_taphold'])
+              =macro['area12_tap_label']
+              br
+              span #{macro['area12_taphold_label']}
+          .ui-block-c
+            #more.ui-bar.ui-bar-a(data-cmd-tap="" + macro['area13_tap'], data-cmd-taphold="" + macro['area13_taphold'])
+              =macro['area13_tap_label']
+              br
+              span #{macro['area13_taphold_label']}
+          .ui-block-a
+            .ui-bar.ui-bar-a(data-cmd-tap="" + macro['area21_tap'], data-cmd-taphold="" + macro['area21_taphold'])
+              =macro['area21_tap_label']
+              br
+              span #{macro['area21_taphold_label']}
+          .ui-block-b
+            #center.ui-bar.ui-bar-a(data-cmd-tap="" + macro['area22_tap'], data-cmd-taphold="" + macro['area22_taphold'])
+              .ui-grid-b
+                .ui-block-a(style="width: 0;")
+                .ui-block-b(style="width: 100%;")
+                  =macro['area22_tap_label']
+                  br
+                  span #{macro['area22_taphold_label']}
+                .ui-block-c(style="width: 0;")
+                .ui-block-a(style="width: 0;")
+                .ui-block-b(style="width: 100%;")
+                  div(style="text-align: center;")
+                    img(src='' + macro.icon)
+                    br
+                    =macro['display_name']
+                .ui-block-c(style="width: 0;")
+                .ui-block-a
+                .ui-block-b
+                .ui-block-c
+          .ui-block-c
+            .ui-bar.ui-bar-a(data-cmd-tap="" + macro['area23_tap'], data-cmd-taphold="" + macro['area23_taphold'])
+              =macro['area23_tap_label']
+              br
+              span #{macro['area23_taphold_label']}
+          .ui-block-a
+            .ui-bar.ui-bar-a(data-cmd-tap="" + macro['area31_tap'], data-cmd-taphold="" + macro['area31_taphold'])
+              =macro['area31_tap_label']
+              br
+              span #{macro['area31_taphold_label']}
+          .ui-block-b
+            .ui-bar.ui-bar-a(data-cmd-tap="" + macro['area32_tap'], data-cmd-taphold="" + macro['area32_taphold'])
+              =macro['area32_tap_label']
+              br
+              span #{macro['area32_taphold_label']}
+          .ui-block-c
+            .ui-bar.ui-bar-a(data-cmd-tap="" + macro['area33_tap'], data-cmd-taphold="" + macro['area33_taphold'])
+              =macro['area33_tap_label']
+              br
+              span #{macro['area33_taphold_label']}
+
+      //- div(data-role="footer", data-id="myfooter", data-position="fixed")
+        h4 #{macro['display_name']}
+        a(class="ui-btn-right", href="#devices") Change...
+
+
+
+
+  #devices(data-role="page", data-theme="a", data-rel="dialog")
+    div(data-role="header")
+      a(href='#', data-icon='back', data-rel='back', title='Go back') Back
+      h1 Remotlets
+
+    div(id="content", data-role="content", style="padding: 0; position: absolute; height: 100%; width: 100%;")
+      #devices-grid.ui-grid-b
+        - var i = 0
+        each macro, key in macros
+          - if (typeof(macro['show_in_device_list']) === 'undefined' || macro['show_in_device_list']) {
+            - i = i + 1
+              if i % 3 == 0
+                .ui-block-c
+                  a(href="#" + key)
+                    img(src="" + macro['icon'])
+                    br
+                    =macro['display_name']
+              else if i % 3 == 2
+                .ui-block-b
+                  a(href="#" + key)
+                    img(src="" + macro['icon'])
+                    br
+                    =macro['display_name']
+              else
+                .ui-block-a
+                  a(href="#" + key)
+                    img(src="" + macro['icon'])
+                    br
+                    =macro['display_name']
+          -}
+
+        

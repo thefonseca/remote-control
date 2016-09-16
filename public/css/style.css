@@ -1,0 +1,105 @@
+body {
+    /*padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    /*color: #00B7FF;*/
+    -webkit-user-select: none !important;
+}
+
+.ui-navbar .ui-btn .ui-icon {
+    width: 45px!important;
+    height: 30px!important;
+    margin-left: -15px !important;
+    box-shadow: none!important;
+    -moz-box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+.ui-footer .ui-btn-icon-top .ui-icon {
+    top: 3px;
+    background-color: transparent;
+}
+
+.ui-footer .ui-btn-icon-top .ui-btn-inner {
+    padding: 35px 3px 2px 3px;
+    font-size: 11px;
+}
+
+.ui-icon-remote-tv {
+    background-image: url("../images/tv.png");
+    background-size: 30px 30px;
+}
+
+.ui-icon-remote-music {
+    background-image: url("../images/music.png");
+    background-size: 30px 30px;
+}
+
+.ui-icon-remote-xbmc {
+    background-image: url("../images/xbmc.png");
+    background-size: 30px 30px;
+}
+
+#ps3-nav .ui-btn-inner .ui-icon-remote-ps3 {
+    background-image: url("../images/ps3.png");
+    background-size: 45px 30px;
+    margin-left: -22px !important;
+}
+
+.ui-icon-remote-more {
+    background-image: url("../images/more.png");
+    background-size: 30px 30px;
+}
+
+.ui-grid-b, .ui-bar {
+    height: 100%;
+    text-align: center;
+}
+
+.command-grid .ui-block-a, .command-grid .ui-block-b, .command-grid .ui-block-c {
+    height: 33.3%;
+}
+
+.ui-bar span {
+    font-weight: normal;
+    color: darkgray;
+    font-size: 14px;
+}
+
+#devices-grid {
+    padding: 20px;
+}
+
+#devices-grid img {
+    height: 40px;
+}
+
+#devices-grid a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+#devices-grid .ui-block-a, #devices-grid .ui-block-b, #devices-grid .ui-block-c {
+    height: 90px;
+}
+
+.ui-bar img {
+    height: 40px;
+}
+
+@media screen and (min-device-width : 768px) and (max-device-width : 568px) and (orientation : landscape) {
+    .ui-bar img {
+        height: 25px;
+    }
+}

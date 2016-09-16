@@ -1,0 +1,7 @@
+#options(data-role="page", data-theme="a")
+  div(data-role="header")
+    a(href="/", data-rel="back") Back
+    h1 Options
+      
+  div(data-role="content")
+    a#shutdown-all(href="#", data-role="button", data-icon="delete", data-theme="b", rel="external", onclick="$.get('/device/watch_tv/off'); return false;") Shutdown All
